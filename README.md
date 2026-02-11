@@ -1,6 +1,6 @@
 # FoxML Core — ML Cross-Sectional Infrastructure
 
-**FoxML is research-grade ML infrastructure with deterministic strict mode + full fingerprint lineage. It assumes prior experience with Python, Linux, and quantitative workflows.**
+**FoxML is research-grade ML infrastructure with deterministic strict mode + full fingerprint lineage. It assumes prior experience with Python, Linux, and quantitative workflows. Some stuff may not work properly, i had a breakdown and wasnt able to test some stuff.**
 
 > 💳 **Support Further Development:** This project is actively developed and maintained. If you find FoxML useful and would like to support continued development, improvements, and new features, please consider making a donation via PayPal: [https://www.paypal.com/ncp/payment/6RRQNA68M497L](https://www.paypal.com/ncp/payment/6RRQNA68M497L)
 >
