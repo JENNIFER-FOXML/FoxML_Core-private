@@ -17,6 +17,7 @@ All notable changes to FoxML Core will be documented in this file.
 - **PosixPath.startswith crash in run hash computation** - `iterdir_sorted()` returns Path objects but `.startswith()` was called directly instead of `.name.startswith()`
 - **`horizon_minutes is None` for `fwd_ret_N` targets** - Added fallback pattern matching bare integers in target names (e.g., `fwd_ret_15` → 15 minutes)
 - **Manifest path mismatch warning** - Validation check looked at `globals/manifest.json` but manifest is saved at `manifest.json`
+- **Infinite loop freeze in directory walk** - `while results_dir.parent.exists()` loops in diff_telemetry and target_routing never terminate at filesystem root; replaced with bounded walks
 
 ## 2026-02-09
 
