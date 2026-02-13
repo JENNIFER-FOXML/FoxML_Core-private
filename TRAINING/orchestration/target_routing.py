@@ -112,10 +112,13 @@ def load_target_confidence(output_dir: Path, target: str, view: Optional[str] = 
     # Walk up to find run root if needed
     # Only stop if we find a run directory (has targets/, globals/, or cache/)
     # Don't stop at RESULTS/ - continue to find actual run directory
-    while base_dir.parent.exists():
+    for _ in range(20):  # Bounded walk to prevent infinite loop at filesystem root
         if (base_dir / "targets").exists() or (base_dir / "globals").exists() or (base_dir / "cache").exists():
             break
-        base_dir = base_dir.parent
+        parent = base_dir.parent
+        if parent == base_dir:  # Reached filesystem root
+            break
+        base_dir = parent
     
     from TRAINING.orchestration.utils.target_first_paths import normalize_target_name
     target_clean = normalize_target_name(target)
@@ -285,10 +288,13 @@ def save_target_routing_metadata(
     base_dir = output_dir
     # Only stop if we find a run directory (has targets/, globals/, or cache/)
     # Don't stop at RESULTS/ - continue to find actual run directory
-    while base_dir.parent.exists():
+    for _ in range(20):  # Bounded walk to prevent infinite loop at filesystem root
         if (base_dir / "targets").exists() or (base_dir / "globals").exists() or (base_dir / "cache").exists():
             break
-        base_dir = base_dir.parent
+        parent = base_dir.parent
+        if parent == base_dir:  # Reached filesystem root
+            break
+        base_dir = parent
     
     from TRAINING.orchestration.utils.target_first_paths import normalize_target_name
     target_clean = normalize_target_name(target)

@@ -1353,10 +1353,13 @@ class DiffTelemetry(DiffEngineMixin, FingerprintMixin, ComparisonGroupMixin, Nor
         if hasattr(self, 'run_dir') and self.run_dir:
             # Find RESULTS directory
             results_dir = self.run_dir
-            while results_dir.parent.exists() and results_dir.name != "RESULTS":
-                results_dir = results_dir.parent
+            for _ in range(20):  # Bounded walk to prevent infinite loop at filesystem root
                 if results_dir.name == "RESULTS":
                     break
+                parent = results_dir.parent
+                if parent == results_dir:  # Reached filesystem root
+                    break
+                results_dir = parent
             
             if results_dir.name == "RESULTS":
                 # Search both sample_* bins and comparison group directories (cg-*)
@@ -1774,10 +1777,13 @@ class DiffTelemetry(DiffEngineMixin, FingerprintMixin, ComparisonGroupMixin, Nor
         if hasattr(self, 'run_dir') and self.run_dir:
             # Find RESULTS directory
             results_dir = self.run_dir
-            while results_dir.parent.exists() and results_dir.name != "RESULTS":
-                results_dir = results_dir.parent
+            for _ in range(20):  # Bounded walk to prevent infinite loop at filesystem root
                 if results_dir.name == "RESULTS":
                     break
+                parent = results_dir.parent
+                if parent == results_dir:  # Reached filesystem root
+                    break
+                results_dir = parent
             
             if results_dir.name == "RESULTS":
                 # Search all sample_* bins
@@ -2611,11 +2617,14 @@ class DiffTelemetry(DiffEngineMixin, FingerprintMixin, ComparisonGroupMixin, Nor
             target_clean = normalize_target_name(prev_snapshot.target)
             if hasattr(self, 'run_dir') and self.run_dir:
                 results_dir = self.run_dir
-                while results_dir.parent.exists() and results_dir.name != "RESULTS":
-                    results_dir = results_dir.parent
+                for _ in range(20):
                     if results_dir.name == "RESULTS":
                         break
-                
+                    parent = results_dir.parent
+                    if parent == results_dir:
+                        break
+                    results_dir = parent
+
                 if results_dir.name == "RESULTS":
                     # Search for the previous run's cohort directory using discovery primitive
                     runs_dir = results_dir / "runs"
@@ -2716,11 +2725,14 @@ class DiffTelemetry(DiffEngineMixin, FingerprintMixin, ComparisonGroupMixin, Nor
                     target_clean = normalize_target_name(baseline_snapshot.target)
                     if hasattr(self, 'run_dir') and self.run_dir:
                         results_dir = self.run_dir
-                        while results_dir.parent.exists() and results_dir.name != "RESULTS":
-                            results_dir = results_dir.parent
+                        for _ in range(20):
                             if results_dir.name == "RESULTS":
                                 break
-                        
+                            parent = results_dir.parent
+                            if parent == results_dir:
+                                break
+                            results_dir = parent
+
                         if results_dir.name == "RESULTS":
                             runs_dir = results_dir / "runs"
                             if runs_dir.exists():
