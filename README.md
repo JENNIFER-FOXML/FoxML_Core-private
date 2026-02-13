@@ -1,5 +1,7 @@
 # FoxML Core — ML Cross-Sectional Infrastructure
 
+> **License Enforcement Notice:** This software is dual-licensed under AGPL-3.0-or-later and a commercial license. If you are found to be in violation of the licensing terms, the author is willing to settle for **1% of gross revenue** derived from use of the software **plus a flat fee of $250,000 USD**. For commercial licensing inquiries, contact **jenn.lewis5789@gmail.com**.
+
 **FoxML is research-grade ML infrastructure with deterministic strict mode + full fingerprint lineage. It assumes prior experience with Python, Linux, and quantitative workflows. Some stuff may not work properly, i had a breakdown and wasnt able to test some stuff.**
 
 > 💳 **Support Further Development:** This project is actively developed and maintained. If you find FoxML useful and would like to support continued development, improvements, and new features, please consider making a donation via PayPal: [https://www.paypal.com/ncp/payment/6RRQNA68M497L](https://www.paypal.com/ncp/payment/6RRQNA68M497L)
@@ -18,7 +20,7 @@
 > - **IBKR module**: Lost during development. The IBKR API is difficult to work with and this module will likely not be continued.
 > - **Alpaca module**: The Alpaca trading module is being redesigned. Legacy implementations are in `ARCHIVE/` for reference. The current execution engine is in `LIVE_TRADING/`.
 >
-> **License:** MIT License (see [LICENSE](LICENSE))
+> **License:** Dual-licensed — AGPL-3.0-or-later ([LICENSE](LICENSE)) or Commercial ([LICENSE-COMMERCIAL](LICENSE-COMMERCIAL))
 
 > **🔍 Reproducibility & Auditability:** This system supports **bitwise deterministic runs** via strict mode (`bin/run_deterministic.sh`) for financial audit compliance. Bitwise determinism requires CPU-only execution, pinned dependencies, fixed thread env vars, and deterministic data ordering. Note: Not guaranteed across different CPUs/BLAS versions/kernels/drivers/filesystem ordering. See [Deterministic Runs](DOCS/02_reference/configuration/DETERMINISTIC_RUNS.md).
 
@@ -67,14 +69,12 @@ Developed and maintained by **Jennifer Lewis**
 ## Quick Start (30 Seconds)
 
 ```bash
-# One-line install
-bash bin/install.sh
-
-# Activate environment
-conda activate trader
-
-# Test installation
-bash bin/test_install.sh
+# pip install (recommended — works in any virtualenv)
+git clone <repository-url>
+cd FoxML
+pip install -e .             # Core (tree models, pipeline, config)
+pip install -e ".[gpu]"      # + PyTorch/TensorFlow for neural families
+pip install -e ".[all]"      # Everything
 
 # Run a quick test
 python -m TRAINING.orchestration.intelligent_trainer \
@@ -84,7 +84,11 @@ python -m TRAINING.orchestration.intelligent_trainer \
 ls RESULTS/runs/*/globals/config.resolved.json
 ```
 
-**Manual install:** `conda env create -f environment.yml && conda activate trader`
+**Conda install** (for full GPU/CUDA source builds):
+```bash
+bash bin/install.sh
+conda activate trader
+```
 
 See [Quick Start Guide](DOCS/00_executive/QUICKSTART.md) for full setup.
 
