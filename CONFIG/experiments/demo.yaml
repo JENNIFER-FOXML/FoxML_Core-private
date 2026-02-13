@@ -11,7 +11,7 @@ experiment:
 # ============================================================================
 data:
   # Data directory - uses existing test data
-  data_dir: data/data_labeled_v3/interval=5m
+  data_dir: data/data_labeled_v2/interval=5m
   
   # Minimal symbol set for fast demo
   symbols:

@@ -947,8 +947,8 @@ def infer_lookback_minutes(
         match = re.match(pattern, feature_name, re.I)  # Case-insensitive
         if match:
             bars = int(match.group(2))
-            # Only treat as bars if it's plausibly a window size (>= 2)
-            if bars >= 2:
+            # Only treat as bars if it's plausibly a window size (>= 1 for known indicators)
+            if bars >= 1:
                 lookback = bars * float(effective_interval_minutes)  # Use per-feature interval
                 if lookback > 0:  # Ensure we got a valid result
                     # DEBUG: Log successful indicator-period match for known offenders

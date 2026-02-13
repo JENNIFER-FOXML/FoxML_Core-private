@@ -2,6 +2,14 @@
 
 All notable changes to FoxML Core will be documented in this file.
 
+## 2026-02-13
+
+### Pipeline Fixes
+
+#### Fixed
+- **`ret_1` lookback inference hard-fail** - 1-bar return feature was rejected by leakage budget because the `bars >= 2` guard excluded single-bar indicators; changed to `bars >= 1` for known indicator families (ret, sma, ema, vol, rsi, etc.)
+- **Demo experiment config data path** - Updated `demo.yaml` to point at `data_labeled_v2` instead of non-existent `data_labeled_v3`
+
 ## 2026-02-09
 
 ### Dashboard Hardening & Bug Fixes (Rounds 1-4)
