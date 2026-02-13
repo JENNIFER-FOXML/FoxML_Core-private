@@ -106,7 +106,10 @@ def get_input_mode(
 
     # Priority 2: Experiment config
     if experiment_config is not None:
-        exp_mode = experiment_config.get("pipeline", {}).get("input_mode")
+        if isinstance(experiment_config, dict):
+            exp_mode = experiment_config.get("pipeline", {}).get("input_mode")
+        else:
+            exp_mode = getattr(experiment_config, "input_mode", None)
         if exp_mode is not None:
             return InputMode.from_string(exp_mode)
 
