@@ -6,8 +6,11 @@ All notable changes to FoxML Core will be documented in this file.
 
 ### Licensing
 
+#### Changed
+- **Simplified bounty program** — Replaced detailed whistleblower bounty (fixed percentages, evidence requirements) with contingency-based 33% of net recovery (after legal fees); no recovery = no obligation (LICENSE-COMMERCIAL Section 10c)
+
 #### Removed
-- **Whistleblower bounty program** — Removed bounty clauses from README, LICENSE-COMMERCIAL (Section 10c-d), and NOTICE file
+- **LinkedIn links** — Removed from README and LICENSE-COMMERCIAL
 
 ## 2026-02-17
 

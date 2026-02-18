@@ -16,6 +16,8 @@ If you or your organization are found using FoxML without a valid license:
 - **$250,000 USD flat fee** plus **1-10% of gross revenue** derived from use of the software, from date of first unauthorized use through settlement
 - The Copyright Holder reserves the right to pursue **full statutory damages** under 17 U.S.C. Section 504 (up to **$150,000 per work** for willful infringement), **injunctive relief**, and **attorney's fees**
 
+**Report unauthorized use:** If your report leads to a successful settlement or judgment, you receive **33% of net recovery** (after legal fees). No recovery, no obligation. Contact: [jenn.lewis5789@gmail.com](mailto:jenn.lewis5789@gmail.com) — See [LICENSE-COMMERCIAL](LICENSE-COMMERCIAL) Section 10(c) for full terms.
+
 ---
 
 **FoxML is research-grade ML infrastructure with deterministic strict mode + full fingerprint lineage. It assumes prior experience with Python, Linux, and quantitative workflows. As always, some parts are experimental and subject to breakage as work continues.**
@@ -54,10 +56,9 @@ FoxML Core is an ML infrastructure stack for cross-sectional and panel data, sup
 >
 > **Aspirational End Goal:** An eventual goal is to enable automatic discovery where you simply set the data path in a config file and the system would automatically discover features and targets, patch the registry, and configure everything without manual intervention. This is currently aspirational and not yet implemented.
 
-Developed and maintained by **Jennifer Lewis**  
-🔗 [LinkedIn](https://www.linkedin.com/in/jennifer-l-3434b3315)
+Developed and maintained by **Jennifer Lewis**
 
-**Research & Development Support:** If you would like to fund or assist research and development, please message me on [LinkedIn](https://www.linkedin.com/in/jennifer-l-3434b3315) or by email at jenn.lewis5789@gmail.com
+**Research & Development Support:** If you would like to fund or assist research and development, please email jenn.lewis5789@gmail.com
 
 ---
 
