@@ -36,7 +36,7 @@ Partial or circumstantial evidence may qualify if it establishes a reasonable ba
 
 ---
 
-**FoxML is research-grade ML infrastructure with deterministic strict mode + full fingerprint lineage. It assumes prior experience with Python, Linux, and quantitative workflows.**
+**FoxML is research-grade ML infrastructure with deterministic strict mode + full fingerprint lineage. It assumes prior experience with Python, Linux, and quantitative workflows. As always, some parts are experimental and subject to breakage as work continues.**
 
 > ⚠️ **Disclaimer:** This software is provided for research and educational purposes only. It does not constitute financial advice, and no guarantees of returns or performance are made. Use at your own risk.
 
