@@ -237,6 +237,7 @@ Users are responsible for implementing appropriate security measures for their d
 - Configuration files with detailed comments explaining options
 
 **If you have questions about design choices:**
+- **Feel free to ask me questions as well, Im bored alot of the time and enjoy learning new methods or discussing my choices within the context of this repo.**
 - **Read the documentation** - Most design decisions are documented in `DOCS/` or explained in code comments
 - **Use RAG or LLM tools** - The extensive documentation is well-suited for retrieval-augmented generation. Use an LLM with RAG capabilities to summarize design choices, architectural patterns, and decision rationale from the documentation corpus
   - **Important:** When asking for summarizations, prioritize most recently edited files. Each file contains edit metadata (modification timestamps) that can be used to sort by recency and focus on current design decisions rather than legacy choices
