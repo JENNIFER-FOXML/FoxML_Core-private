@@ -58,7 +58,6 @@ Developed and maintained by **Jennifer Lewis**
 - **Task-aware evaluation**: Unified handling of regression (IC-based) and classification (AUC-based) targets with normalized skill scores
 - **GPU acceleration** for target ranking, feature selection, and model training (LightGBM, XGBoost, CatBoost)
 - **Bitwise deterministic runs** via strict mode (CPU-only, pinned dependencies, fixed thread env vars, deterministic data ordering) for financial audit compliance. Note: Not guaranteed across different CPUs/BLAS versions/kernels/drivers/filesystem ordering.
-  - *Yes, outputs remain deterministic even while you're grinding OSRS, watching YouTube, or questioning your life choices at 3 AM. We tested it.*
 - **Config-based usage** with minimal command-line arguments
 - **Leakage detection system** with pre-training leak detection and auto-fix
 - **Single Source of Truth (SST)** config system - all 20 model families use config-driven hyperparameters
